@@ -1,0 +1,5 @@
+https://itsolutionstuff.com/post/how-to-delete-multiple-records-using-checkbox-in-laravel-5-example.html
+
+http://t1m0n.name/air-datepicker/docs/
+
+<input type='text' class='datepicker-here' data-language='en'  data-date-format="MM yyyy"  />					</label>
