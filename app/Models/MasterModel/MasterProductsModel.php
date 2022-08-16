@@ -1,6 +1,6 @@
 <?php
 
-namespace App\MasterModel;
+namespace App\Models\MasterModel;
 
 use App\Traits\TapActivityLog;
 use Illuminate\Database\Eloquent\Model;
