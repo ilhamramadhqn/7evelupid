@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
 
-class MasterProductsVariantsModel extends Model
+class MasterProductVariantsModel extends Model
 {
 
     /**
      * @var string
      */
-    protected $table = 'mst_products_variants';
+    protected $table = 'mst_product_variants';
 
     /**
      * @var string

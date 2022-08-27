@@ -39,7 +39,7 @@ $segment=Request::segment(1);
 								</td>
 								<td>{{$d->name}}</td>
 								<td>
-									@foreach($d->option_values as $c)
+									@foreach($d->mst_products as $c)
 									<div class="row">
 										<div class="col-md-1">{{$c->sequence}}.</div>
 										<div class="col-md-8">{{$c->value}}</div>

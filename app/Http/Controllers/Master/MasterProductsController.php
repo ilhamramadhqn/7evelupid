@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\DB;
 use App\Models\MasterModel\MasterProductsModel;
-use App\Models\MasterModel\MasterProductsVariantsModel;
+use App\Models\MasterModel\MasterProductVariantsModel;
 use RealRashid\SweetAlert\Facades\Alert;
 use Validator;
 
@@ -23,16 +23,16 @@ class MasterProductsController extends Controller
 
     function __construct()
     {
-        $this->middleware('permission:MasterGames.index', ['only' => ['index']]);
-        $this->middleware('permission:MasterGames.create', ['only' => ['create','store']]);
-        $this->middleware('permission:MasterGames.edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:MasterGames.destroy', ['only' => ['destroy','deleteAll']]);
-        $this->middleware('permission:MasterGames.print', ['only' => ['export']]);
+        $this->middleware('permission:MasterProducts.index', ['only' => ['index']]);
+        $this->middleware('permission:MasterProducts.create', ['only' => ['create','store']]);
+        $this->middleware('permission:MasterProducts.edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:MasterProducts.destroy', ['only' => ['destroy','deleteAll']]);
+        $this->middleware('permission:MasterProducts.print', ['only' => ['export']]);
     }
 
     public function index(Request $request)
     {
-        $data = MasterProductsModel::fetch($request);
+        $data = MasterProductVariantsModel::fetch($request);
         
         return view('Master.MasterProducts.default',compact('data',$data));
 
@@ -86,19 +86,18 @@ class MasterProductsController extends Controller
                 $master_products_variants[]=
                 [
                 'id'=>Uuid::uuid4(),
-                'option_group_id'=>$addup->id,
+                'mst_products_id'=>$addup->id,
                 'key'=>$no,
                 'value'=>$value,
                 'sequence'=>$no];
                 $no++;
             }
-            OptionValue::insert($master_products_variants);
+            MasterProductVariantsModel::insert($master_products_variants);
 
             Alert::success('Berhasil','Data '.$addup->name.' tersimpan');
             return redirect('MasterProducts');
     
         }
-
     }
 
     /**
@@ -161,7 +160,7 @@ class MasterProductsController extends Controller
                 $master_products_variants[]=
                 [
                 'id'=>Uuid::uuid4(),
-                'option_group_id'=>$addup->id,
+                'master_products_id'=>$addup->id,
                 'key'=>$no,
                 'value'=>$value,
                 'sequence'=>$no];

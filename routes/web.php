@@ -45,9 +45,9 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::delete('UserClienstDeleteAll', 'Master\UserClientController@deleteAll');
 	Route::post('UserClients/filter', 'Master\UserClientController@index');
 
-	Route::resource('MasterGames','Master\MasterProductsController',['except' => ['show']]);
-	Route::delete('MasterGamesDeleteAll', 'Master\MasterProductsController@deleteAll');
-	Route::post('MasterGames/filter', 'Master\MasterProductsController@index');
+	Route::resource('MasterProducts','Master\MasterProductsController',['except' => ['show']]);
+	Route::delete('MasterProductsDeleteAll', 'Master\MasterProductsController@deleteAll');
+	Route::post('MasterProducts/filter', 'Master\MasterProductsController@index');
 	
 	// Route::resource('Transactions','Master\TransactionController',['except' => ['show']]);
 	// Route::delete('TransactionsDeleteAll', 'Master\TransactionController@deleteAll');

@@ -22,7 +22,7 @@ $n=1;
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group">
-			<label>Nama </label>
+			<label>Product Name</label>
 			{!! Form::text('name', null, array('placeholder' => 'Text','class' => 'form-control')) !!}
 		</div>
 
@@ -42,7 +42,7 @@ $n=1;
 	</div>
 	<div class="col-md-6 " id="value-list">
 		<div class="form-group">
-			<label>Option Value </label>
+			<label>Products List</label>
 			<div class="input-group mb-3">
 				<div class="input-group-append">
 					<button type="button" class="btn btn-success add-value" >
@@ -51,7 +51,7 @@ $n=1;
 				</div>
 			</div>
 
-			@foreach($d->master_products_variants as $v)
+			@foreach($d->mst_products_variants as $v)
 			<div class="input-group mb-3">
 				<input type="text" name="value[{{$n}}}]" placeholder="Text" class="form-control" value="{{$v->value}}"/>
 				<button type="button" class="btn btn-danger remove-value"><i class="feather icon-minus"></i></button>
